@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+{% include "blocks/head.html" %}
+
+<body class="stretched sticky-footer page-transition"
+      data-loader-html="<span class='pizza'> <span class='slice'></span> <span class='slice'></span> <span class='slice'></span> <span class='slice'></span> <span class='slice'></span> <span class='slice'></span> <span class='slice'></span> <span class='slice'></span> <span class='slice'></span> <span class='slice'></span> <span class='slice'></span> <span class='slice'></span> <span class='slice'></span> </span>">
+<div id="wrapper" class="clearfix">
+    {% include "blocks/header.html" %}
+    {% block content %}{% endblock %}
+    {% include "blocks/footer.html" %}
+</div>
+{% include "blocks/js.html" %}
+</body>
+</html>

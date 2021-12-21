@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
+
+	<!-- Stylesheets
+	============================================= -->
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Poppins:300,400,500,600,700|PT+Serif:400,400i&display=swap" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="/static/css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="/static/css/style.css" type="text/css" />
+	<link rel="stylesheet" href="/static/css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="/static/css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="/static/css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="/static/css/magnific-popup.css" type="text/css" />
+	<link rel="stylesheet" href="/static/css/swiper.css" type="text/css" />
+	<link rel="stylesheet" href="/static/css/et-line.css" type="text/css" />
+	<!-- restaurant Demo Specific Stylesheet -->
+	
+	<link rel="stylesheet" href="/static/css/fonts2.css" type="text/css" />
+	<!-- / -->
+	<link rel="stylesheet" href="/static/css/custom.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="/static/css/colors.php?color=e7272d" type="text/css" />
+
+	<!-- Document Title
+	============================================= -->
+	<title>Статьи и блоги</title>
+	
+
+</head>
+
+<body class="stretched">
+
+    
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+		{% include 'blocks/header.html' %}
+
+	
+
+		<!-- Content
+		============================================= -->
+		<section id="content">
+			<div class="content-wrap">
+				<div class="container clearfix">
+
+					<div class="row gutter-40 col-mb-80">
+						<!-- Post Content
+						============================================= -->
+						<div class="postcontent col-lg-9">
+
+							<div class="single-post mb-0">
+
+								
+									
+									<!-- Entry Title
+									============================================= -->
+									<div class="entry-title">
+										<h2>{{object.h1_title}}</h2>
+									</div><!-- .entry-title end -->
+
+									<!-- Entry Meta
+									============================================= -->
+									<div class="entry-meta">
+										<ul>
+											<li><i class="icon-calendar3"></i> {{object.published_date}}</li>
+											<li><a href="#"><i class="icon-comments"></i> {{object.comment_article.all.count}} Comments</a></li>
+											<li><a href="{{object.preview.url}}"><i class="icon-camera-retro"></i></a></li>
+										</ul>
+									</div><!-- .entry-meta end -->
+
+									<!-- Entry Image
+									============================================= -->
+									<div class="entry-image">
+										<a href="{{object.preview.url}}"><img src="{{object.preview.url}}" alt="{{object.h1_title}}"></a>
+									</div><!-- .entry-image end -->
+
+									<!-- Entry Content
+									============================================= -->
+									<div class="entry-content mt-0">
+
+										{{object.content|safe}}
+
+										<!-- Tag Cloud
+										============================================= -->
+										<div class="tagcloud clearfix bottommargin">
+											{% for tag in object.tags.all %}
+												<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">{{tag}}</a>
+											{% endfor %}
+										</div><!-- .tagcloud end -->
+
+										<div class="clear"></div>
+
+										<!-- Post Single - Share
+										============================================= -->
+										<div class="si-share border-0 d-flex justify-content-between align-items-center">
+											<span>Share this Post:</span>
+											<div>
+												<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="social-icon si-borderless si-facebook">
+													<i class="icon-facebook"></i>
+													<i class="icon-facebook"></i>
+												</a>
+												<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="social-icon si-borderless si-twitter">
+													<i class="icon-twitter"></i>
+													<i class="icon-twitter"></i>
+												</a>
+												<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="social-icon si-borderless si-pinterest">
+													<i class="icon-pinterest"></i>
+													<i class="icon-pinterest"></i>
+												</a>
+												<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="social-icon si-borderless si-gplus">
+													<i class="icon-gplus"></i>
+													<i class="icon-gplus"></i>
+												</a>
+												<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="social-icon si-borderless si-rss">
+													<i class="icon-rss"></i>
+													<i class="icon-rss"></i>
+												</a>
+												<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="social-icon si-borderless si-email3">
+													<i class="icon-email3"></i>
+													<i class="icon-email3"></i>
+												</a>
+											</div>
+										</div><!-- Post Single - Share End -->
+
+									</div>
+								</div><!-- .entry end -->
+
+								<!-- Post Navigation
+								============================================= -->
+								<div class="row justify-content-between col-mb-30 post-navigation">
+									<div class="col-12 col-md-auto text-center">
+										<a href="https://www.youtube.com/watch?v=djV11Xbc914">&lArr; This is a Standard post with a Slider Gallery</a>
+									</div>
+
+									<div class="col-12 col-md-auto text-center">
+										<a href="https://www.youtube.com/watch?v=djV11Xbc914">This is an Embedded Audio Post &rArr;</a>
+									</div>
+								</div><!-- .post-navigation end -->
+
+								
+
+								<!-- Post Author Info
+								<div class="line"></div>
+								=============================================
+								<div class="card">
+									<div class="card-header"><strong>Автор: <span style="color: #1ABC9C">{{object.author.name}}</span></strong></div>
+									<div class="card-body">
+										<div class="author-image">
+											<img src="/static/images/default/default_autor.png" alt="Image" class="rounded-circle">
+										</div>
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, eveniet, eligendi et nobis neque minus mollitia sit repudiandae ad repellendus recusandae blanditiis praesentium vitae ab sint earum voluptate velit beatae alias fugit accusantium laboriosam nisi reiciendis deleniti tenetur molestiae maxime id quaerat consequatur fugiat aliquam laborum nam aliquid. Consectetur, perferendis?
+									</div>
+								</div> Post Single - Author End -->
+
+								<!-- Comments
+								============================================= -->
+								<div id="comments" class="clearfix">
+
+									<h3 id="comments-title"><span>{{object.comment_article.all.count}}</span> Comments</h3>
+
+									<!-- Comments List
+									============================================= -->
+									<ol class="commentlist clearfix">
+										{% for i in object.comment_article.all %}
+										<li class="comment even thread-even depth-1" id="li-comment-1">
+
+											<div id="comment-1" class="comment-wrap clearfix">
+
+												<div class="comment-meta">
+
+													<div class="comment-author vcard">
+
+														<span class="comment-avatar clearfix">
+														<img alt='Image' src='https://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60' class='avatar avatar-60 photo avatar-default' height='60' width='60' /></span>
+
+													</div>
+
+												</div>
+
+												<div class="comment-content clearfix">
+
+													<div class="comment-author">{{i.user}}<span><a href="#" title="Permalink to this comment">{{i.published_date}}</a></span></div>
+
+													<p>{{i.text}}</p>
+
+													
+
+												</div>
+
+												<div class="clear"></div>
+
+											</div>
+
+											<!-- На будущее для ступеньчатой системы коментариев
+											<ul class='children'>
+
+												<li class="comment byuser comment-author-_smcl_admin odd alt depth-2" id="li-comment-3">
+
+													<div id="comment-3" class="comment-wrap clearfix">
+
+														<div class="comment-meta">
+
+															<div class="comment-author vcard">
+
+																<span class="comment-avatar clearfix">
+																<img alt='Image' src='https://1.gravatar.com/avatar/30110f1f3a4238c619bcceb10f4c4484?s=40&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' /></span>
+
+															</div>
+
+														</div>
+
+														<div class="comment-content clearfix">
+
+															<div class="comment-author"><a href='#' rel='external nofollow' class='url'>SemiColon</a><span><a href="#" title="Permalink to this comment">April 25, 2012 at 1:03 am</a></span></div>
+
+															<p>Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+
+															<a class='comment-reply-link' href='#'><i class="icon-reply"></i></a>
+
+														</div>
+
+														<div class="clear"></div>
+
+													</div>
+
+												</li>
+
+											</ul>
+											-->
+										</li>
+										{% endfor %}
+
+									</ol><!-- .commentlist end -->
+
+									<div class="clear"></div>
+									
+									<!-- Comment Form
+									============================================= -->
+									<div id="respond">
+										{% if user.is_authenticated %}
+										<h3>Leave a <span>Comment</span></h3>
+
+										<form class="row" action="#" method="post" id="commentform">
+											{% csrf_token %}
+											<div class="col-12 form-group">
+												
+												{{form.as_p}}
+											</div>
+											
+
+											<div class="col-12 form-group">
+												<button name="submit" type="submit" id="submit-button" tabindex="5" value="Submit" class="button button-3d m-0">Submit Comment</button>
+											</div>
+										</form>
+										{% else %}
+											<h3><span> <a href="{% url 'login' %}"> Sign in </a></span> to leave a Comment</h3>
+										{% endif %}
+									</div><!-- #respond end -->
+									
+								</div><!-- #comments end -->
+
+							
+						</div><!-- .postcontent end -->
+
+						<!-- Sidebar
+						============================================= -->
+						<div class="sidebar col-lg-3">
+							<div class="sidebar-widgets-wrap">
+
+								<div class="widget widget-twitter-feed clearfix">
+
+									<h4>Twitter Feed</h4>
+									<ul class="iconlist twitter-feed" data-username="envato" data-count="2">
+										<li></li>
+									</ul>
+
+									<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn btn-secondary btn-sm float-right">Follow Us on Twitter</a>
+
+								</div>
+
+
+								<div class="widget clearfix">
+
+									<div class="tabs mb-0 clearfix" id="sidebar-tabs">
+
+										<ul class="tab-nav clearfix">
+											<li><a href="#tabs-1">Популярное</a></li>
+											<li><a href="#tabs-2">Недавние</a></li>
+										</ul>
+
+										<div class="tab-container">
+
+											<div class="tab-content clearfix" id="tabs-1">
+												<div class="posts-sm row col-mb-30" id="popular-post-list-sidebar">
+												{% for news in popular_news %}
+												<div class="entry col-12">
+														<div class="grid-inner row no-gutters">
+															<div class="col-auto">
+																<div class="entry-image">
+																	<a href="{{news.get_absolute_url}}"><img class="rounded-circle" src="{{news.preview.url}}" alt="Image"></a>
+																</div>
+															</div>
+															<div class="col pl-3">
+																<div class="entry-title">
+																	<h4><a href="{{news.get_absolute_url}}">{{news.title|truncatewords:6}}</a></h4>
+																</div>
+																<div class="entry-meta">
+																	<ul>
+																		<li><i class="icon-comments-alt"></i> 35 Comments</li>
+																	</ul>
+																</div>
+															</div>
+														</div>
+													</div>
+												{% endfor %}
+													
+												</div>
+											</div>
+											
+											<div class="tab-content clearfix" id="tabs-2">
+												<div class="posts-sm row col-mb-30" id="recent-post-list-sidebar">
+												{% for news in recent_news %}
+												<div class="entry col-12">
+														<div class="grid-inner row no-gutters">
+															<div class="col-auto">
+																<div class="entry-image">
+																	<a href="{{news.get_absolute_url}}"><img class="rounded-circle" src="{{news.preview.url}}" alt="Image"></a>
+																</div>
+															</div>
+															<div class="col pl-3">
+																<div class="entry-title">
+																	<h4><a href="{{news.get_absolute_url}}">{{news.title|truncatewords:6}}</a></h4>
+																</div>
+																<div class="entry-meta">
+																	<ul>
+																		<li>{{news.published_date}}</li>
+																	</ul>
+																</div>
+															</div>
+														</div>
+													</div>
+												{% endfor %}
+												</div>
+											</div>
+
+										</div>
+
+									</div>
+
+								</div>
+
+								<div class="widget clearfix">
+
+									<h4>Portfolio Carousel</h4>
+									<div id="oc-portfolio-sidebar" class="owl-carousel carousel-widget" data-items="1" data-margin="10" data-loop="true" data-nav="false" data-autoplay="5000">
+
+										<div class="oc-item">
+											<div class="portfolio-item">
+												<div class="portfolio-image">
+													<a href="#">
+														<img src="/static/images/portfolio/1.jpg" alt="Mac Sunglasses">
+													</a>
+													<div class="bg-overlay">
+														<div class="bg-overlay-content dark" data-hover-animate="fadeIn" data-hover-speed="350">
+															<a href="https://vimeo.com/89396394" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="zoomIn" data-hover-speed="350" data-lightbox="iframe"><i class="icon-line-play"></i></a>
+														</div>
+														<div class="bg-overlay-bg dark" data-hover-animate="fadeIn" data-hover-speed="350"></div>
+													</div>
+												</div>
+												<div class="portfolio-desc text-center pb-0">
+													<h3><a href="portfolio-single-video.html">Mac Sunglasses</a></h3>
+													<span><a href="#">Graphics</a>, <a href="#">UI Elements</a></span>
+												</div>
+											</div>
+										</div>
+
+										<div class="oc-item">
+											<div class="portfolio-item">
+												<div class="portfolio-image">
+													<a href="portfolio-single.html">
+														<img src="/static/images/portfolio/2.jpg" alt="Open Imagination">
+													</a>
+													<div class="bg-overlay">
+														<div class="bg-overlay-content dark" data-hover-animate="fadeIn" data-hover-speed="350">
+															<a href="images/blog/full/1.jpg" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="zoomIn" data-hover-speed="350" data-lightbox="image"><i class="icon-line-plus"></i></a>
+														</div>
+														<div class="bg-overlay-bg dark" data-hover-animate="fadeIn" data-hover-speed="350"></div>
+													</div>
+												</div>
+												<div class="portfolio-desc text-center pb-0">
+													<h3><a href="portfolio-single.html">Open Imagination</a></h3>
+													<span><a href="#">Media</a>, <a href="#">Icons</a></span>
+												</div>
+											</div>
+										</div>
+
+									</div>
+
+
+								</div>
+
+								<div class="widget clearfix">
+
+									<h4>Tag Cloud</h4>
+									<div class="tagcloud">
+										{% for tag in tags %}
+										<a href="https://www.youtube.com/watch?v=djV11Xbc914">{{tag.tag_name}}</a>
+										{% endfor %}
+										
+										
+									</div>
+
+								</div>
+
+							</div>
+						</div><!-- .sidebar end -->
+					</div>
+
+				</div>
+			</div>
+        <div
+          style="
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 3;
+            background: url('/static/images/sketch-header.png') repeat center
+              bottom;
+            background-size: auto 100%;
+            height: 40px;
+            margin-bottom: -20px;
+          "
+        ></div>
+		</section><!-- #content end -->
+
+		{% include 'blocks/footer.html' %}
+
+	</div><!-- #wrapper end -->
+
+	{% include 'blocks/js.html' %}
+
+
+</body>
+</html>

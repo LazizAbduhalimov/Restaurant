@@ -1,0 +1,75 @@
+{% extends "main_app/inner.html" %} {% block content %}
+<!-- Page Title
+    ============================================= -->
+<section
+  id="page-title"
+  class="page-title-parallax page-title-center border-bottom include-header"
+  style="
+    background-image: url('/static/images/sections/6.jpg');
+    background-size: 100% auto;
+  "
+  data-center="background-position:100% 100px;"
+  data-top-bottom="background-position:100% -200px;"
+>
+  <div class="container clearfix">
+    <span class="font-primary ls1 mb-2 color" style="font-size: 14px"
+      >Top Services</span
+    >
+    <h1 class="font-secondary text-capitalize ls0" style="font-size: 62px">
+      News & Blogs
+    </h1>
+  </div>
+</section>
+<!-- #page-title end -->
+
+<!-- Content
+    ============================================= -->
+<section id="content">
+  <div class="content-wrap pb-0" style="overflow: visible">
+    <div class="container">
+      <div class="row posts-md col-mb-30 mb-0">
+        {% for object in object_list %}
+        <div class="col-lg-4 col-sm-6">
+          <div class="entry">
+            <div class="entry-image">
+              <a href="{{object.preview.url}}" data-lightbox="image"
+                ><img src="{{object.preview.url}}" alt="Image 1"
+              /></a>
+            </div>
+            <div class="entry-title mt-0 p-4 title-xs nott">
+              <div class="entry-meta mt-0 mb-2">
+                <ul>
+                  <li>{{object.published_date}}</a></li>
+                  <li><a href="#">{{object.tags.first}}</a></li>
+                </ul>
+              </div>
+
+              <h2 class="mb-0">
+                <a href="{{object.get_absolute_url}}">{{object.h1_title}}</a>
+              </h2>
+            </div>
+          </div>
+        </div>
+
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div
+    style="
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 3;
+      background: url('/static/images/sketch-header.png') repeat center bottom;
+      background-size: auto 100%;
+      height: 40px;
+      margin-bottom: -20px;
+    "
+  ></div>
+</section>
+<!-- #content end -->
+
+{% endblock %}
